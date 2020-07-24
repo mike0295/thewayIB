@@ -162,16 +162,19 @@ jQuery(document).ready(function($) {
 		}
 
 		$('.slide-one-item').owlCarousel({
+		animateOut: 'fadeOut',
+		touchDrag: false,
+		mouseDrag: false,
 	    center: false,
 	    items: 1,
 	    loop: true,
 			stagePadding: 0,
 	    margin: 0,
-	    smartSpeed: 1500,
+	    smartSpeed: 2000,
 	    autoplay: true,
 	    pauseOnHover: false,
 	    dots: true,
-	    nav: true,
+	    nav: false,
 	    navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
 	  });
 
