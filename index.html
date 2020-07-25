@@ -29,7 +29,14 @@
 
       <!-- Import header using jquery -->
       <div id="header"></div>
-
+      
+      
+      <!-- STATIC COVER -->
+      <!-- <div id="cover-single"></div> -->
+      
+      <!-- SLIDESHOW COVER -->
+      <div id="cover-slideshow">
+        <!-- 
       <div class="owl-carousel owl-theme slide-one-item">
         <div class="site-section-cover overlay" style="background-image: url('images/hero_bg.jpg');">
           <div class="container">
@@ -65,7 +72,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> 
+      </div> 
+      -->
       </div>
       
 
@@ -404,6 +413,46 @@
 
   </div>  
     <script src="js/jquery-3.3.1.min.js"></script>
+    
+    
+    <!-- CUSTOM SCRIPT START -->
+    <script>
+      $(document).ready(function() {
+        $('#header').load('./includes/header.html', function() {
+          $('.nav-item-index').addClass('active'); //CHANGE CLASS TO .nav-item-ITEMNAME
+        });
+
+        $('#cover-slideshow').load('./includes/cover-slideshow.html', function() {
+          $('.slide-one-item').owlCarousel({
+            animateOut: 'fadeOut',
+            touchDrag: false,
+            mouseDrag: false,
+            center: false,
+            items: 1,
+            loop: true,
+            stagePadding: 0,
+            margin: 0,
+            smartSpeed: 2000,
+            autoplay: true,
+            pauseOnHover: false,
+            dots: true,
+            nav: false,
+            navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
+          });
+        });
+
+        $('#cover-single').load('./includes/cover-single.html', function() {
+          $('#page-title').append("Title");
+          $('#page-subtitle').append("Subtitle");
+        });
+
+        $('#footer').load('./includes/footer.html');
+      });
+    </script>
+    <!-- CUSTOM SCRIPT END -->
+
+    <!-- <script src="js/template.js"></script> -->
+
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -414,15 +463,6 @@
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/aos.js"></script>
-    
-    <script>
-      $(document).ready(function() {
-        $('#header').load('./includes/header.html', function() {
-          $('.nav-item-index').addClass('active'); //CHANGE CLASS TO .nav-item-ITEMNAME
-        });
-        $('#footer').load('./includes/footer.html');
-      });
-    </script>
 
     <script src="js/main.js"></script>
   </body>
