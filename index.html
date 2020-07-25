@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 
   <head>
     <title>The Way &mdash; IA 클리닉</title>
@@ -457,8 +458,9 @@
       </div>
     </div>
       
+    <div id="footer"></div>
       
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
@@ -481,18 +483,15 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
               <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </p>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
-    </div>
-
+  </div>  
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -507,7 +506,13 @@
 
     <script src="js/main.js"></script>
 
+    <script>
+      $(document).ready(function() {
+        $('#footer').load('./footer.html');
+      });
+    </script>
   </body>
+    
 
 </html>
 
