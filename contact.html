@@ -26,65 +26,16 @@
 </head>
 
 <body>
-
-
   <div class="site-wrap" id="home-section">
 
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
+    <!-- Import header using jquery -->
+    <div id="header"></div>
 
-    <header class="site-navbar light site-navbar-target" role="banner">
+    <!-- STATIC COVER -->
+    <div id="cover-single"></div>
 
-      <div class="container">
-        <div class="row align-items-center position-relative">
-
-          <div class="col-3">
-            <div class="site-logo">
-              <a href="index.html"><img src="images/logo/logo_white_horizontal_small.png" height="60px"/></a>
-            </div>
-          </div>
-
-          <div class="col-9  text-right">
-
-            <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-white"></span></a></span>
-
-            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="articles.html" class="nav-link">Articles</a></li>
-                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li class="active"><a href="contact.html" class="nav-link">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-
-
-        </div>
-      </div>
-
-    </header>
-
-
-    <div class="site-section-cover overlay" style="background-image: url('images/hero_bg.jpg');">
-
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-10 text-center">
-            <h1><strong>Contact Us</strong></h1>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
+    <!-- SLIDESHOW COVER -->
+    <!-- <div id="cover-slideshow"></div> -->
 
     <div class="site-section bg-light" id="contact-section">
       <div class="container">
@@ -135,42 +86,57 @@
       </div>
     </div>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <img src="images/logo/logo_red_horizontal.png" height="40px"/>          
-          </div>
-          <div class="col-lg-3">
-            <a href='#'>서비스 소개</a>
-          </div>
-          <div class="col-lg-3">
-            <a href='#'>이용약관?</a>
-          </div>
-          <div class="col-lg-3">
-            <a href='#'>고객센터?</a>
-          </div>
-  
-        </div>
-        <br />
-        <p>대표 * * * | 주소 ~~~ ~~~ ~~~ | 사업자등록번호 ~~~ ~~~ ~~~ | 기타 정보</p>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer id="footer" class="site-footer"></footer>
 
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
+
+  <!-- CUSTOM SCRIPT START -->
+  <script>
+    $(document).ready(function () {
+        $("#header").load("./includes/header.html", function () {
+            $(".nav-item-contact").addClass("active"); //CHANGE CLASS TO .nav-item-ITEMNAME
+        });
+
+        $("#cover-slideshow").load(
+            "./includes/cover-slideshow.html",
+            function () {
+                $(".slide-one-item").owlCarousel({
+                    animateOut: "fadeOut",
+                    touchDrag: false,
+                    mouseDrag: false,
+                    center: false,
+                    items: 1,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 0,
+                    smartSpeed: 2000,
+                    autoplay: true,
+                    pauseOnHover: false,
+                    dots: true,
+                    nav: false,
+                    navText: [
+                        '<span class="icon-keyboard_arrow_left">',
+                        '<span class="icon-keyboard_arrow_right">',
+                    ],
+                });
+            }
+        );
+
+        $("#cover-single").load(
+            "./includes/cover-single.html",
+            function () {
+                $("#page-title").append("Contact Us"); //Change Title
+                $("#page-subtitle").append(""); //Change Subtitle
+            }
+        );
+
+        $("#footer").load("./includes/footer.html");
+    });
+  </script>
+  <!-- CUSTOM SCRIPT END -->
+
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
