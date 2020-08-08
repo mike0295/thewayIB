@@ -1101,7 +1101,8 @@ h1, h2, h3, h4, h5,
 
 .post-entry-1 .post-entry-1-contents {
   background: #fff;
-  padding: 20px; }
+  padding: 20px;
+  text-align: left; }
   .post-entry-1 .post-entry-1-contents h2 {
     font-size: 22px;
     margin-bottom: 20px; }
@@ -1219,6 +1220,10 @@ h1, h2, h3, h4, h5,
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+/* .floating-footer {
+
+} */
 
 /* .owl-carousel {
   position: relative; }
