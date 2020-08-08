@@ -86,6 +86,29 @@
       </div>
     </div>
 
+    <div class="site-section bg-primary py-5 cta">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-7 mb-4 mb-md-0">
+                  <h2 class="mb-0 text-white">
+                      지금 바로 무료 상담 받으세요!
+                  </h2>
+                  <p class="mb-0 opa-7">
+                      카카오톡 1 대 1 오픈채팅방으로 초대되며, 익명이
+                      보장됩니다.
+                  </p>
+              </div>
+              <div class="col-lg-5 text-md-right">
+                  <a
+                      href="https://open.kakao.com/o/su5l4npc"
+                      class="btn btn-primary btn-white"
+                      >문의하기</a
+                  >
+              </div>
+          </div>
+      </div>
+  </div>
+
     <!-- Import footer using jquery -->
     <footer id="footer" class="site-footer"></footer>
 
@@ -120,8 +143,8 @@
         });
 
         $('#cover-single').load('../includes/cover-single.html', function() {
-          $('#page-title').append("포스트 제목");
-          $('#page-subtitle').append("Posted on Date &bullet; By Author");
+          $('#page-title').append("포스트 제목"); //CHANGE POST TITLE
+          $('#page-subtitle').append("Posted on Date &bullet; By Author"); //CHANGE POST INFO
         });
 
         $('#footer').load('../includes/footer-article.html');
