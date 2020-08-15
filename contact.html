@@ -42,30 +42,31 @@
         
         <div class="row">
           <div class="col-lg-8 mb-5" >
-            <form action="#" method="post">
+            <form name="emailform" action="https://script.google.com/macros/s/AKfycbxC6H_MyrdLJbo1CNneDhxCUCDbdrfVzhKXYlHt_TjynDvl8Nc/exec" 
+            method="POST" enctype="multipart/form-data" onsubmit="return required();">
               <div class="form-group row">
                 <div class="col-md-6 mb-4 mb-lg-0">
-                  <input type="text" class="form-control" placeholder="이거 할까 말까">
+                  <input type="text" name="subject" class="form-control" placeholder="제목">
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <input type="text" class="form-control" placeholder="Last name">
+                </div> -->
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" name="email" class="form-control" placeholder="메일 주소">
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Email address">
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <textarea name="" id="" class="form-control" placeholder="보통 사이트 버그나 구직관련 문의 이렇게 메일로 따로 하긴 하는데" cols="30" rows="10"></textarea>
+                  <textarea name="message" class="form-control" placeholder="사이트 오류 혹은 구직 관련 등 기타 문의" cols="30" rows="10"></textarea>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-6 mr-auto">
-                  <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Send Message">
+                  <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="보내기">
                 </div>
               </div>
             </form>
@@ -157,6 +158,24 @@
 
         $("#footer").load("./includes/footer.html");
     });
+  </script>
+
+  <!-- This is to check whether the mail form is empty -->
+  <script>
+    function required() {
+      var subject = document.forms["emailform"]["subject"].value;
+      var email = document.forms["emailform"]["email"].value;
+      var message = document.forms["emailform"]["message"].value;
+
+      if (subject=="" || email=="" || message=="") {
+        alert("Please complete the form");
+        return false;
+      } else {
+        alert("Email has been sent!");
+        location.reload();
+        return true;
+      }
+    }
   </script>
   <!-- CUSTOM SCRIPT END -->
 
